@@ -5,6 +5,12 @@ spring:
   cloud:
     gateway:
       routes:
+        - id: bookservice
+          uri: https://bookservicetuan.herokuapp.com/
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
         - id: book
           uri: https://booklistingtuan.herokuapp.com/
           predicates:
