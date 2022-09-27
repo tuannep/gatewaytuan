@@ -6,13 +6,13 @@ spring:
     gateway:
       routes:
         - id: book
-          uri: http://localhost:8081/
+          uri: https://booklistingtuan.herokuapp.com/
           predicates:
           - Path=/book/**
           filters:
           - StripPrefix=1
         - id: film
-          uri: http://localhost:8082/
+          uri: https://filmlistingtuan.herokuapp.com/
           predicates:
           - Path=/film/**
           filters:
